@@ -1,28 +1,44 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <AppNavbar />
+    <h1>First app</h1>
+    <!-- <AppForm/> -->
+    <AppShowData />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import TestComponent1 from './components/testComponent1.vue'
+import AppNavbar from './components/AppNavbar'
+import AppForm from './components/AppForm'
+import AppShowData from './components/AppShowData'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    TestComponent1,
+    AppNavbar,
+    AppForm,
+    AppShowData
   }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .spacer {
+    flex: 1 1 auto;
+  }
+  .full-width {
+    width: 100%;
+  }
+
+  h1, h2 {
+    width: fit-content;
+    margin: 0 auto;
+  }
 </style>
