@@ -4,6 +4,7 @@
     <h1>First app</h1>
     <!-- <AppForm/> -->
     <AppShowData />
+    <AppList />
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import TestComponent1 from './components/testComponent1.vue'
 import AppNavbar from './components/AppNavbar'
 import AppForm from './components/AppForm'
 import AppShowData from './components/AppShowData'
+import AppList from './components/AppList'
 
 export default {
   name: 'app',
@@ -20,7 +22,8 @@ export default {
     TestComponent1,
     AppNavbar,
     AppForm,
-    AppShowData
+    AppShowData,
+    AppList
   }
 }
 </script>

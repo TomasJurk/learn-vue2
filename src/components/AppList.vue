@@ -1,6 +1,6 @@
 <template>
     <div v-theme:column="'narrow'" class="show">
-        <h2>All data</h2>
+        <h2>List</h2>
         <input type="text" v-model="search" placeholder="search"/>
         <div v-for="(dat, index) in filteredData" :key="index">
             <h3 v-rainbow>{{ dat.title | to-uppercase }}</h3>
@@ -14,7 +14,7 @@ import Axios from 'axios';
 import searchMixin from '../mixins/searchMixin';
 
 export default {
-    name: 'AppShowData',
+    name: 'AppList',
     data() {
         return {
            data: [],
@@ -28,7 +28,7 @@ export default {
         });
     },
     computed: {
-        
+
     },
     filters: {
         // can use to-uppercase and toUppercase, this is same 
