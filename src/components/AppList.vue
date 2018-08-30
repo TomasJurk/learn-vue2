@@ -1,9 +1,11 @@
 <template>
-    <div v-theme:column="'narrow'" class="show">
+    <div class="show" v-autoMargin v-theme:column="'narrow'">
         <h2>List</h2>
         <input type="text" v-model="search" placeholder="search"/>
         <div v-for="(dat, index) in filteredData" :key="index">
-            <h3 v-rainbow>{{ dat.title | to-uppercase }}</h3>
+            <router-link :to="'/data/' + dat.id">
+                <h3 v-rainbow>{{ dat.title | to-uppercase }}</h3>
+            </router-link>
             <p>{{ dat.body | snippet }}</p>
         </div>
     </div>

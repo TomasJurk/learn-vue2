@@ -1,9 +1,11 @@
 <template>
-    <div v-theme:column="'narrow'" class="show">
+    <div v-theme:column="'narrow'" v-autoMargin class="show">
         <h2>All data</h2>
         <input type="text" v-model="search" placeholder="search"/>
         <div v-for="(dat, index) in filteredData" :key="index">
-            <h3 v-rainbow>{{ dat.title | to-uppercase }}</h3>
+            <router-link :to="'/data/' + dat.id">
+                <h3 v-rainbow>{{ dat.title | to-uppercase }}</h3>
+            </router-link>
             <p>{{ dat.body | snippet }}</p>
         </div>
     </div>
@@ -40,6 +42,11 @@ export default {
         rainbow: {
             bind(el, binding, vnode) {
                 el.style.cssText = (`color: #${Math.random().toString().slice(2, 8)}`);
+            }
+        },
+        autoMargin: {
+            bind(el, binding, cnode) {
+                el.style.margin = '0 auto';
             }
         }
     },
