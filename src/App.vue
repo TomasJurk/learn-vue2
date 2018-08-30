@@ -2,9 +2,7 @@
   <div id="app">
     <AppNavbar />
     <h1>First app</h1>
-    <!-- <AppForm/> -->
-    <AppShowData />
-    <AppList />
+    <router-view></router-view>
   </div>
 </template>
 
