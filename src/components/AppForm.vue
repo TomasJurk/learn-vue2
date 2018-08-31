@@ -35,6 +35,7 @@
 
 <script>
 import Axios from 'axios';
+import db from './firebaseInit';
 
 export default {
     name: 'AppForm',
@@ -62,14 +63,12 @@ export default {
             });
         } */
         submitForm () {
-            Axios.post('https://jsonplaceholder.typicode.com/posts', {
-                title: this.blog.name,
-                body: this.blog.text,
-                userId: 1
-            }).then(data => {
+            /* Axios.post('https://learn-vue-b2f3e.firebaseio.com/posts.json', this.blog)
+            .then(data => {
                 console.log(data);
                 this.submited = true;
-            });
+            }); */
+            db.collection('test').add(this.blog);
         }
     }
 }
